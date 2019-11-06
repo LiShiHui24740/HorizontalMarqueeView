@@ -1,16 +1,19 @@
 # HorizontalMarqueeView
-水平View跑马灯
+最近项目需求要实现图片以及各种布局的类似跑马灯效果，网上搜索了一下没有想要的，于是就自己写了一个。
+
 ### 效果
 ![github](https://github.com/LiShiHui24740/HorizontalMarqueeView/blob/master/img/marquee.gif)  
+
 ### 集成
 ```
 dependencies {
     implementation 'com.github.airland:horizontalmarqueeview:1.0.0'
 }
 ```
+
 ### 使用
 ```
- 1.布局，ltr：是否从左向右滚动，默认false;  speed: 滚动速度，默认为2
+ 1.布局，自定义属性 ltr：是否从左向右滚动，默认false;  speed: 滚动速度，默认为2
  
  <com.airland.marqueeview.HorizontalMarqueeView
         android:id="@+id/hmv_test1"
@@ -19,7 +22,7 @@ dependencies {
         app:ltr="true"
         app:speed="5" />
         
- 2. 在界面中，使用和RecyclerView,ListView类似，设置Adapter,自己可以集成AbstractMarqueeAdapter
+ 2. 在界面中使用和RecyclerView,ListView类似，设置Adapter,自己可以继承AbstractMarqueeAdapter
  
  horizontalMarqueeView1 = findViewById(R.id.hmv_test1);
  
