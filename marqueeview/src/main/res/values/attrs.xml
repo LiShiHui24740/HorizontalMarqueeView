@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorizontalMarqueeView">
+        <attr name="speed" format="integer" />
+        <attr name="ltr" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,2 @@
+include ':app', ':marqueeview'
+rootProject.name='My Application'

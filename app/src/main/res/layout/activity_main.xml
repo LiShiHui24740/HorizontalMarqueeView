@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="速度：2，滚动方向：从右向左"
+        android:textColor="#333333" />
+
+    <com.airland.marqueeview.HorizontalMarqueeView
+        android:id="@+id/hmv_test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="速度：5，滚动方向：从左向右"
+        android:textColor="#333333" />
+
+    <com.airland.marqueeview.HorizontalMarqueeView
+        android:id="@+id/hmv_test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ltr="true"
+        app:speed="5" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="速度：10，滚动方向：从右向左"
+        android:textColor="#333333" />
+
+    <com.airland.marqueeview.HorizontalMarqueeView
+        android:id="@+id/hmv_test3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:speed="10" />
+
+</LinearLayout>
