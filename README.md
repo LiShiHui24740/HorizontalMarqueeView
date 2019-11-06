@@ -1,5 +1,5 @@
 # HorizontalMarqueeView
-最近项目需求要实现图片以及各种布局的类似跑马灯效果，网上搜索了一下没有想要的，于是就自己写了一个。
+最近项目需求要实现图片以及各种布局的类似跑马灯效果，网上搜索了一下没有想要的，于是就自己写了一个。实现了View的复用，只创建了可显示区域的View。
 
 ### 效果
 ![github](https://github.com/LiShiHui24740/HorizontalMarqueeView/blob/master/img/marquee.gif)  
