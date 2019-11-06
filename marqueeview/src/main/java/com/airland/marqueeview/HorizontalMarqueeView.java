@@ -3,6 +3,7 @@ package com.airland.marqueeview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -62,6 +63,7 @@ public class HorizontalMarqueeView extends FrameLayout {
     public void setAdapter(final AbstractMarqueeAdapter adapter) {
         this.abstractMarqueeAdapter = adapter;
         viewCache.clear();
+        mShowWidth = 0;
         getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
@@ -88,7 +90,8 @@ public class HorizontalMarqueeView extends FrameLayout {
                     mShowWidth += mItemWidth;
                     viewCache.add(view);
                 }
-                startScrollAnimation();
+                if (mLimitIndex > 0)
+                    startScrollAnimation();
                 return false;
             }
         });
