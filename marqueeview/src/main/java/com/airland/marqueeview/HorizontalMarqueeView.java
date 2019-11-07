@@ -3,7 +3,6 @@ package com.airland.marqueeview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -70,10 +69,6 @@ public class HorizontalMarqueeView extends FrameLayout {
                 getViewTreeObserver().removeOnPreDrawListener(this);
                 mItemCount = abstractMarqueeAdapter.getItemCount();
                 for (int i = 0; i < mItemCount; i++) {
-                    if (mShowWidth >= mWidth + mItemWidth) {
-                        mLimitIndex = i;
-                        break;
-                    }
                     View view = adapter.onCreateView(HorizontalMarqueeView.this, i);
                     ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                     mItemWidth = layoutParams.width;
@@ -89,6 +84,10 @@ public class HorizontalMarqueeView extends FrameLayout {
                     abstractMarqueeAdapter.onBindViewHolder(HorizontalMarqueeView.this, view, i);
                     mShowWidth += mItemWidth;
                     viewCache.add(view);
+                    if (mShowWidth >= mWidth + mItemWidth) {
+                        mLimitIndex = i;
+                        break;
+                    }
                 }
                 if (mLimitIndex > 0)
                     startScrollAnimation();
@@ -163,10 +162,11 @@ public class HorizontalMarqueeView extends FrameLayout {
                 view.setTranslationX((nextScrollIndex - 1) * mItemWidth + mShowWidth);
             }
             viewCache.add(view);
+            mLimitIndex++;
             if (mLimitIndex == mItemCount)
                 mLimitIndex = 0;
             abstractMarqueeAdapter.onBindViewHolder(HorizontalMarqueeView.this, view, mLimitIndex);
-            mLimitIndex++;
+
         }
     }
 
