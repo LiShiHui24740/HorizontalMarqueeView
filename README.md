@@ -7,7 +7,7 @@
 ### 集成
 ```
 dependencies {
-    implementation 'com.github.airland:horizontalmarqueeview:1.0.2'
+    implementation 'com.github.airland:horizontalmarqueeview:1.0.3'
 }
 ```
 
