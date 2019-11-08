@@ -126,6 +126,17 @@ public class HorizontalMarqueeView extends FrameLayout {
         return abstractMarqueeAdapter;
     }
 
+    public void pause() {
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+    }
+
+    public void resume() {
+        startScrollAnimation();
+    }
+
     public void destory() {
         if (timer != null) {
             timer.cancel();
