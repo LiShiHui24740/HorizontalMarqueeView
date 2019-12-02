@@ -91,7 +91,7 @@ public class HorizontalMarqueeView extends FrameLayout {
                 }
                 if (mLimitIndex > 0)
                     startScrollAnimation();
-                return false;
+                return true;
             }
         });
     }
@@ -166,6 +166,8 @@ public class HorizontalMarqueeView extends FrameLayout {
         }
 
         private void appendView(int nextScrollIndex) {
+            if (viewCache == null || viewCache.isEmpty())
+                return;
             View view = viewCache.removeFirst();
             if (ltr) {
                 view.setTranslationX(-(nextScrollIndex * mItemWidth) + (mWidth - mShowWidth));
